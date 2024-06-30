@@ -111,3 +111,10 @@ def upload_file():
             shutil.rmtree(folder_path)
     else:
         return jsonify({"error": "File type not allowed"}), 400
+    
+    
+
+@upload_blueprint.route('/wake', methods=['GET'])
+def wake_server():
+    print("server is awake...")
+    return jsonify({"message": "Server woke up successfully!"}), 200
